@@ -12,20 +12,28 @@
     <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
     <script defer src="https://pyscript.net/latest/pyscript.js"></script>
 
-    <!-- Add custom styling -->
+    <!-- Custom Styling -->
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Open Sans', sans-serif;
             margin: 20px;
-            background-color: #f4f4f9;
+            background-color: #f0f0f5;
+            color: #333;
+            line-height: 1.6;
         }
 
         h1 {
             text-align: center;
+            font-size: 2.5em;
+            color: #00796b;
+            margin-bottom: 10px;
         }
 
         h2 {
             text-align: center;
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            color: #555;
         }
 
         #wordInt {
@@ -34,31 +42,40 @@
         }
 
         .styled-paragraph {
-            color: #333;
-            font-size: 1.2em;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid;
-            width: 75%;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            max-width: 900px;
             margin: 20px auto;
             white-space: pre-wrap; 
+            line-height: 1.8;
+        }
+
+        
+        @media (max-width: 768px) {
+            .styled-paragraph {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            h1, h2 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
 
-    <h1>Midterm Requirement 1 - Reflection Narrative Data Privacy & CyberSec</h1>
+    <h1>Midterm Requirement 1 - Reflection Narrative</h1>
+    <h2>Word Count: <span id="wordInt"></span></h2>
 
-    <h2>Word count: <span id="wordInt">683</span></h2>
-
-    <!-- Define a div to hold the paragraph -->
+    <!-- Paragraph Container -->
     <div id="output" class="styled-paragraph"></div>
 
-    <!-- PyScript block -->
+    <!-- PyScript Block -->
     <py-script>
-        # Python code to create and display HTML content with paragraph formatting
-
-        # Define the content of the paragraph with new lines separating each paragraph
+        # Define the paragraph content with line breaks for each paragraph
         paragraph = """In today's world, where technology has become an integral part of life, ensuring our data remains private is as important as anything else in this world. The things we do not even notice being taken from us by apps, websites, and online platforms remain stored and are sometimes shared with other people. This Data Privacy and Awareness Campaign has made me think really deeply about keeping the details safe and knowing how it is used by companies.
 
         I never really cared much about data privacy before that campaign. Whenever the terms and conditions or the privacy policies popped up during installation in apps or services, I used to click "Accept" with barely a second look at the content. It seemed too much hassle to bother with the technical terms and legal language presented in the terms and conditions, so I clicked "Accept" and went ahead. However, after realizing the risks and possible consequences of not protecting my data, I felt that that was a bad move.
@@ -76,9 +93,20 @@
         In conclusion, the Data Privacy and Awareness Campaign has truly opened my eyes to the essence of being always on the lookout for every detail concerning my personal information. With numerous temptations casually sharing one's details over the internet or even in public, the risks that follow from not doing this can be quite severe. I now realize that one should be wary of the data he/she possesses and, hopefully, others will learn to do so in a similar manner that even other students. Protecting our personal information within this digital age is much like protecting one's physical possessions, and all individuals should not take it lightly.
         """
 
-        # Find the div with id 'output' and set its innerHTML to the paragraph text
+        # Function to count words
+        def word_counter(text):
+            # Split text into words and return the count
+            words = text.split()
+            return len(words)
+
+        # Find the output element by id and write the paragraph content to it
         output_element = Element("output")
         output_element.write(paragraph)
+
+        # Calculate the word count and update the word counter in HTML
+        word_count = word_counter(paragraph)
+        word_count_element = Element("wordInt")
+        word_count_element.write(str(word_count))
     </py-script>
 
 </body>

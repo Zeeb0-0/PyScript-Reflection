@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyScript Example</title>
+
+    <!-- Include PyScript CDN -->
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+
+    <!-- Add custom styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f4f4f9;
+        }
+
+        .styled-paragraph {
+            color: #333;
+            font-size: 1.2em;
+            background-color: #e0f7fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #00796b;
+            width: 50%;
+            margin: 20px auto;
+            white-space: pre-wrap; /* Ensures new lines are respected */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>PyScript HTML Example</h1>
+
+    <!-- Define a div to hold the paragraph -->
+    <div id="output" class="styled-paragraph"></div>
+
+    <!-- PyScript block -->
+    <py-script>
+        # Python code to create and display HTML content with paragraph formatting
+
+        # Define the content of the paragraph with new lines separating each paragraph
+        paragraph = """In today's world, where technology has become an integral part of life, ensuring our data remains private is as important as anything else in this world. The things we do not even notice being taken from us by apps, websites, and online platforms remain stored and are sometimes shared with other people. This Data Privacy and Awareness Campaign has made me think really deeply about keeping the details safe and knowing how it is used by companies.
+
+        I never really cared much about data privacy before that campaign. Whenever the terms and conditions or the privacy policies popped up during installation in apps or services, I used to click "Accept" with barely a second look at the content. It seemed too much hassle to bother with the technical terms and legal language presented in the terms and conditions, so I clicked "Accept" and went ahead. However, after realizing the risks and possible consequences of not protecting my data, I felt that that was a bad move.
+
+        What I learned from this campaign was that I need to know what happens with my personal data by companies. For instance, whenever I join a social media account or buy something through online purchasing, the details such as the name I fill in, email, address, and even payment information appear.
+
+        These data prove handy to the companies that collect them; they are also beneficial to advertisers and unfortunately sometimes, hackers. I had previously learned that sometimes data is used to portray our targeted advertisements or even sold third-party companies without individuals knowing. I therefore realized that this information was currency and I should be more prudent on who I give it to.
+
+        Another area that raised data privacy concerns to my mind is the harm done by data breaches. We have heard stories during the campaign about how people's personal information has been stolen in large data breaches and how that has led to identity theft, fraud, and so many other deep problems. The stories I had heard made me realize that nobody is safe – neither the world's giants nor movie stars. So, even my private information, which I may consider totally worthless, is a potential source of money for criminals.
+
+        I was surprised to know about ways through which we can guard our data. Simple acts such as using stronger and different passwords for different accounts, setting up two-factor authentication, and being mindful about what we post online make a huge difference in keeping our information safe. Before this campaign, the most common act was having the same password for multiple accounts because it is easier to memorize, but I now realize that it is a severe security violation. I became more zealous to use different passwords for different accounts as well as take extra precautions in handling and disclosing my personal data.
+
+        I also loved the way the campaign raised awareness over privacy laws, especially the Data Privacy Act of 2012 here in the Philippines. It is a law that protects private individuals from being compelled to give away their private information through correct regulation in the manner firms collect and process personal data in order to secure their privacy.  It was reassuring to know that the laws protect us, though it made me realize how much I have been doing nothing for my safety. Because of laws, it doesn't mean that breaches won't take place or that companies always respect the rules of their infrastructure.
+
+        In conclusion, the Data Privacy and Awareness Campaign has truly opened my eyes to the essence of being always on the lookout for every detail concerning my personal information. With numerous temptations casually sharing one's details over the internet or even in public, the risks that follow from not doing this can be quite severe. I now realize that one should be wary of the data he/she possesses and, hopefully, others will learn to do so in a similar manner that even other students. Protecting our personal information within this digital age is much like protecting one's physical possessions, and all individuals should not take it lightly.
+        """
+
+        # Find the div with id 'output' and set its innerHTML to the paragraph text
+        output_element = Element("output")
+        output_element.write(paragraph)
+    </py-script>
+
+</body>
+</html>
